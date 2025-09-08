@@ -1,16 +1,18 @@
 package dev.PedroBibiano.CadastroDeNinjas.Ninja.Model;
 //JPA java persistence API
 
+import dev.PedroBibiano.CadastroDeNinjas.Missoes.Model.MissoesModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-//Construtores + getters e setters
+import java.util.List;
 
+//Construtores + getters e setters
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "tb_cadastro")
+@Entity //transformando numa entidade
+@Table(name = "tb_cadastro") // criando a tabela
 
 public class NinjaModel {
 
@@ -22,6 +24,14 @@ public class NinjaModel {
 
     private String email;
 
-    private String idade;
+    private int idade;
+
+    //Um Ninja tem 1 unica missão
+    @ManyToOne
+    @JoinColumn(name = "missoes_id") //Foreing Key - Chave Estrangeira
+    private MissoesModel missoes;
+
+
 
 }
+
