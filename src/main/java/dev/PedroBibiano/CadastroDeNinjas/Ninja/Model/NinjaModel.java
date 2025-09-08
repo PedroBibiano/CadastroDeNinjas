@@ -4,13 +4,15 @@ package dev.PedroBibiano.CadastroDeNinjas.Ninja.Model;
 import dev.PedroBibiano.CadastroDeNinjas.Missoes.Model.MissoesModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 //Construtores + getters e setters
-@AllArgsConstructor
-@NoArgsConstructor
+@AllArgsConstructor //cosntrutor cheio
+@NoArgsConstructor //construtor vazio
+@Data //getters e setters
 @Entity //transformando numa entidade
 @Table(name = "tb_cadastro") // criando a tabela
 
@@ -30,8 +32,6 @@ public class NinjaModel {
     @ManyToOne
     @JoinColumn(name = "missoes_id") //Foreing Key - Chave Estrangeira
     private MissoesModel missoes;
-
-
 
 }
 
