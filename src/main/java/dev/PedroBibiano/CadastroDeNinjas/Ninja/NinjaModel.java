@@ -1,13 +1,11 @@
-package dev.PedroBibiano.CadastroDeNinjas.Ninja.Model;
+package dev.PedroBibiano.CadastroDeNinjas.Ninja;
 //JPA java persistence API
 
-import dev.PedroBibiano.CadastroDeNinjas.Missoes.Model.MissoesModel;
+import dev.PedroBibiano.CadastroDeNinjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
 
 //Construtores + getters e setters
 @AllArgsConstructor //cosntrutor cheio

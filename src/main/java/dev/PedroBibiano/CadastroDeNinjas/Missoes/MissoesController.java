@@ -1,4 +1,4 @@
-package dev.PedroBibiano.CadastroDeNinjas.Ninja.Controller;
+package dev.PedroBibiano.CadastroDeNinjas.Missoes;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping
-public class NinjaController {
+public class MissoesController {
 
-    @GetMapping("/boasvindas")
-    public String boasVindas() {
-        return "Bem vindo a primeira rota, continue estudando";
+    @GetMapping("/missoes")
+    public String missoes() {
+        return "em breve sera possivel encontrar as missões aqui";
     }
 }
