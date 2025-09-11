@@ -20,14 +20,14 @@ public class NinjaController {
     public String mostrarTodosOsNinjas() {return "Mostrar ninja(s)";}
 
     //MOSTRAR NINJA POR ID (READ)
-    @GetMapping("/todosID")
+    @GetMapping("/todos_id")
     public String mostrarTodosOsNinjasPorID() {return "Mostrar ninja por ID";}
 
     //Alterar dados dos ninjas (UPDATE)
-    @PutMapping("/alterarID")
+    @PutMapping("/alterar_id")
     public String AlterarNinjaPorId() {return "Mostrar ninja por ID";}
 
     //Deletar Ninja(DELETE)
-    @DeleteMapping("/deletarID")
+    @DeleteMapping("/deletar_rid")
     public String deletarNinjaPorId() {return "Ninja deletado por ID";}
 }
