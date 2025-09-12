@@ -3,27 +3,26 @@ package dev.PedroBibiano.CadastroDeNinjas.Missoes;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping
+@RequestMapping("/missoes")
 public class MissoesController {
-    //Adicionar Missão-(CRETE)
-    @PostMapping("/missoes-criar")
-    public String missoesCriar() {
-        return "Missão Criada";
-    }
 
-    //Mostrar todas as Missões-(READ)
-    @GetMapping("/missoes-todos")
-    public String missoeTodos() {return "Mostrar missões"; }
+    // Adicionar (CRETE)
+    @PostMapping("/criar")
+    public String criarMissao() {return "missao criada";}
 
-    //Mostrar as Missões por ID-(READ)
-    @GetMapping("/missoes-todo-id")
-    public String mostrarMissoesPorId(){return "Mostrar missões por ID";}
+    //MOSTRAR TODAS (READ)
+    @GetMapping("/todos")
+    public String mostrarTodosAsMissoes() {return "Mostrar Missoes";}
 
-    //Alterar dados das Missões-(UPDATE)
-    @PutMapping("/missoes-alterar-id")
-    public String missoesAlterarId(){return "Alterar ID";}
+    //MOSTRAR POR ID (READ)
+    @GetMapping("/todos-id")
+    public String mostrarTodosAsMissoesPorID() {return "Mostrar missoes por ID";}
 
-    //Deletar Missões-(DELETE)
-    @DeleteMapping ("/missoes-deletar-id")
-    public String missoesDeletarPorId(){return "missão deletada por ID";}
+    //Alterar dados (UPDATE)
+    @PutMapping("/alterar")
+    public String AlterarMissoesPorId() {return "Mostrar missao por ID";}
+
+    //Deletar (DELETE)
+    @DeleteMapping("/deletar")
+    public String deletarMissoesPorId() {return "missao deletada por ID";}
 }
