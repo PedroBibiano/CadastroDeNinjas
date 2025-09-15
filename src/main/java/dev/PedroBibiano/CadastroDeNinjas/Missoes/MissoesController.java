@@ -1,6 +1,7 @@
 package dev.PedroBibiano.CadastroDeNinjas.Missoes;
 
 
+import dev.PedroBibiano.CadastroDeNinjas.Ninja.NinjaModel;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,9 +27,9 @@ public class MissoesController {
     }
 
     //Listar POR ID (READ)
-    @GetMapping("/listar-id")
-    public String listarMissoesPorId() {
-        return "listar missoes por id";
+    @GetMapping("/listar/{id}")
+    public MissoesModel listarMissoesPorId(@PathVariable Long id) {
+        return missoesService.listarMissoesPorId(id);
     }
 
     //Alterar dados (UPDATE)
