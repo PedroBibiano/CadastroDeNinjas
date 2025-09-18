@@ -17,7 +17,10 @@ public class NinjaController {
 
     // Adicionar ninja (CRETE)
     @PostMapping("/criar")
-    public String criarNinja() {return "ninja criado";}
+    public NinjaModel criarNinja(@RequestBody NinjaModel ninja)
+    {
+        return ninjaService.criarNinja(ninja);
+    }
 
     @GetMapping("/boasvindas")
     public String boasVindas() {

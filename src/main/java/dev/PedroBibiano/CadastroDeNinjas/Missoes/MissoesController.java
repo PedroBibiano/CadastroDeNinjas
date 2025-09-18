@@ -18,7 +18,11 @@ public class MissoesController {
 
     // Adicionar (CRETE)
     @PostMapping("/criar")
-    public String criarMissao() {return "missao criada";}
+    public MissoesModel criarMissoes(@RequestBody MissoesModel missoes)
+    {
+        return missoesService.criarMissoes(missoes);
+    }
+
 
     //Listar TODAS (READ)
     @GetMapping("/listar")

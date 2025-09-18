@@ -21,6 +21,10 @@ public class NinjaService {
     public NinjaModel listarNinjasPorId(Long id){
         Optional<NinjaModel> ninjaModel = ninjaRepository.findById(id);
         return ninjaModel.orElse(null);
-
+    }
+    //Criar ninja
+    public NinjaModel criarNinja(NinjaModel ninja)
+    {
+        return ninjaRepository.save(ninja);
     }
 }
