@@ -23,7 +23,6 @@ public class MissoesController {
         return missoesService.criarMissoes(missoes);
     }
 
-
     //Listar TODAS (READ)
     @GetMapping("/listar")
     public List<MissoesModel> listarMissoes() {
@@ -40,7 +39,13 @@ public class MissoesController {
     @PutMapping("/alterar")
     public String AlterarMissoesPorId() {return "Mostrar missao por ID";}
 
+
     //Deletar (DELETE)
-    @DeleteMapping("/deletar")
-    public String deletarMissoesPorId() {return "missao deletada por ID";}
+    @DeleteMapping("/deletar/{id}")
+    public String deletarMissoesPorId(@PathVariable Long id)
+    {
+        missoesService.deletarMissoesPorId(id);
+    return deletarMissoesPorId(id);
+    }
+
 }

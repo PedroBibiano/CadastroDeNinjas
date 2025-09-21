@@ -29,4 +29,12 @@ public class MissoesService {
         return missoesRepository.save(missoes);
     }
 
+    //Deletar missão(preciasa ser void por não retornar nada)
+    public void deletarMissoesPorId(Long id)
+    {
+        missoesRepository.deleteById(id);
+    }
+
+    //ATUALIZAR missao
+
 }
