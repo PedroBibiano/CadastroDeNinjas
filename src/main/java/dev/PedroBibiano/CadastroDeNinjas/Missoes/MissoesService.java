@@ -9,9 +9,12 @@ public class MissoesService {
 
 
     private MissoesRepository missoesRepository;
+    private MissoesMapper missoesMapper;
 
-    public MissoesService(MissoesRepository missoesRepository)
-    {   this.missoesRepository = missoesRepository;     }
+    public MissoesService(MissoesRepository missoesRepository, MissoesMapper missoesMapper) {
+        this.missoesRepository = missoesRepository;
+        this.missoesMapper = missoesMapper;
+    }
 
     //listar
     public List<MissoesModel> ListarMissoes()
@@ -24,9 +27,11 @@ public class MissoesService {
         return missoesModel.orElse(null);
     }
     //Criar missão
-    public MissoesModel criarMissoes(MissoesModel missoes)
+    public MissoesDTO criarMissoes(MissoesDTO missoesDTO)
     {
-        return missoesRepository.save(missoes);
+        MissoesModel missoes = missoesMapper.map(missoesDTO);
+        missoes = missoesRepository.save(missoes);
+        return missoesMapper.map(missoes);
     }
 
     //Deletar missão(preciasa ser void por não retornar nada)

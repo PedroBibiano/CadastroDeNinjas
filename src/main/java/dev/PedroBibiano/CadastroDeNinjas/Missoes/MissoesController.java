@@ -11,15 +11,17 @@ import java.util.List;
 
 public class MissoesController {
 
-    MissoesService missoesService;
-    public MissoesController(MissoesService missoesService) {
+    private MissoesService missoesService;
+    private MissoesMapper missoesMapper;
+
+    public MissoesController(MissoesService missoesService, MissoesMapper missoesMapper) {
         this.missoesService = missoesService;
+        this.missoesMapper = missoesMapper;
     }
 
     // Adicionar (CRETE)
     @PostMapping("/criar")
-    public MissoesModel criarMissoes(@RequestBody MissoesModel missoes)
-    {
+    public MissoesDTO criarMissoes(@RequestBody MissoesDTO missoes) {
         return missoesService.criarMissoes(missoes);
     }
 

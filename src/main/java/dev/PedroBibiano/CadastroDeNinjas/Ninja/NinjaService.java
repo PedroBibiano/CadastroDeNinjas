@@ -7,11 +7,14 @@ import java.util.Optional;
 @Service
 public class NinjaService {
 
-    NinjaRepository ninjaRepository;
 
-    public NinjaService(NinjaRepository ninjaRepository)
-    {   this.ninjaRepository = ninjaRepository; }
+    private NinjaRepository ninjaRepository;
+    private NinjaMapper ninjaMapper;
 
+    public NinjaService(NinjaRepository ninjaRepository, NinjaMapper ninjaMapper) {
+        this.ninjaRepository = ninjaRepository;
+        this.ninjaMapper = ninjaMapper;
+    }
 
     //Listar todos os ninjas
     public List<NinjaModel> ListarNinjas()
@@ -23,9 +26,11 @@ public class NinjaService {
         return ninjaModel.orElse(null);
     }
     //Criar ninja
-    public NinjaModel criarNinja(NinjaModel ninja)
+    public NinjaDTO criarNinja(NinjaDTO ninjaDTO)
     {
-        return ninjaRepository.save(ninja);
+        NinjaModel ninja = ninjaMapper.map(ninjaDTO);
+       ninja = ninjaRepository.save(ninja);
+        return ninjaMapper.map(ninja);
     }
     //Deletar ninja(preciasa ser void por não retornar nada)
     public void deletarNinjaPorId(Long id){
