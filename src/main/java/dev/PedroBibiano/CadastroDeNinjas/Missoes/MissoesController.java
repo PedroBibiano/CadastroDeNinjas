@@ -11,33 +11,35 @@ import java.util.List;
 
 public class MissoesController {
 
-    MissoesService missoesService;
-    public MissoesController(MissoesService missoesService) {
+    private MissoesService missoesService;
+    private MissoesMapper missoesMapper;
+
+    public MissoesController(MissoesService missoesService, MissoesMapper missoesMapper) {
         this.missoesService = missoesService;
+        this.missoesMapper = missoesMapper;
     }
 
     // Adicionar (CRETE)
     @PostMapping("/criar")
-    public MissoesModel criarMissoes(@RequestBody MissoesModel missoes)
-    {
+    public MissoesDTO criarMissoes(@RequestBody MissoesDTO missoes) {
         return missoesService.criarMissoes(missoes);
     }
 
     //Listar TODAS (READ)
     @GetMapping("/listar")
-    public List<MissoesModel> listarMissoes() {
+    public List<MissoesDTO> listarMissoes() {
         return missoesService.ListarMissoes();
     }
 
     //Listar POR ID (READ)
     @GetMapping("/listar/{id}")
-    public MissoesModel listarMissoesPorId(@PathVariable Long id) {
+    public MissoesDTO listarMissoesPorId(@PathVariable Long id) {
         return missoesService.listarMissoesPorId(id);
     }
 
     //Alterar dados (UPDATE)
     @PutMapping("/alterar/{id}")
-    public MissoesModel atualizarMissao(@PathVariable Long id, @RequestBody MissoesModel missaoAtualizada) {
+    public MissoesDTO atualizarMissao(@PathVariable Long id, @RequestBody MissoesDTO missaoAtualizada) {
         return missoesService.atualizarMissao(id, missaoAtualizada);
     }
 
