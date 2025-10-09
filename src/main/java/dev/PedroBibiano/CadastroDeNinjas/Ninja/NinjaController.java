@@ -11,7 +11,7 @@ import java.util.List;
 
 public class NinjaController {
 
-    private NinjaService ninjaService;
+    private final NinjaService ninjaService;
     private  NinjaMapper ninjaMapper;
 
     public NinjaController(NinjaService ninjaService, NinjaMapper ninjaMapper) {

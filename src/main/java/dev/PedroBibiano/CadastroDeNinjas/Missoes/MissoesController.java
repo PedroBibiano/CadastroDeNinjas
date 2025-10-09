@@ -13,7 +13,7 @@ import java.util.List;
 
 public class MissoesController {
 
-    private MissoesService missoesService;
+    private  final MissoesService missoesService;
     private MissoesMapper missoesMapper;
 
     public MissoesController(MissoesService missoesService, MissoesMapper missoesMapper) {
