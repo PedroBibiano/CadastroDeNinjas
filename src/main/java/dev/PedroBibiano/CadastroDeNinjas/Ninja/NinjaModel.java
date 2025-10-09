@@ -6,7 +6,9 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
+@ToString(exclude = "missoes")
 //Construtores + getters e setters
 @AllArgsConstructor //cosntrutor cheio
 @NoArgsConstructor //construtor vazio
